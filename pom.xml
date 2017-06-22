@@ -48,6 +48,12 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/ExternalLibraries/java-client-5.0.0-BETA8.jar</systemPath>
 		</dependency>	 
+		<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.11</version>
+    <scope>test</scope>
+</dependency>
 		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 <!-- <dependency>
     <groupId>io.appium</groupId>
