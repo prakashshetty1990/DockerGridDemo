@@ -1,0 +1,1410 @@
+<!DOCTYPE html> 
+<html> 
+	 <head> 
+		 <meta charset='UTF-8'> 
+		 <title> - testcase02_verifyServicesDropDownLinks Automation Execution Results</title> 
+
+		 <style type='text/css'> 
+			 body { 
+				 background-color: #282A2A; 
+				 font-family: Verdana, Geneva, sans-serif; 
+				 text-align: center; 
+			 } 
+
+			 small { 
+				 font-size: 0.5em; 
+			 } 
+
+			 table { 
+				 border: 1px solid #4D7C7B; 
+				 border-collapse: collapse; 
+				 border-spacing: 0px; 
+				 width: 1000px; 
+				 margin-left: auto; 
+				 margin-right: auto; 
+			 } 
+
+			 tr.heading { 
+				 background-color: #495758; 
+				 color: #95A3A4; 
+				 font-size: 0.7em; 
+				 font-weight: bold; 
+			 } 
+
+			 tr.subheading { 
+				 background-color: #95A3A4; 
+				 color: #495758; 
+				 font-weight: bold; 
+				 font-size: 0.7em; 
+				 text-align: justify; 
+			 } 
+
+			 tr.section { 
+				 background-color: #8B9292; 
+				 color: #001429; 
+				 cursor: pointer; 
+				 font-weight: bold; 
+				 font-size: 0.7em; 
+				 text-align: justify; 
+			 } 
+
+			 tr.subsection { 
+				 cursor: pointer; 
+			 } 
+
+			 tr.content { 
+				 background-color: #EDEEF0; 
+				 color: #282A2A; 
+				 font-size: 0.7em; 
+				 display: table-row; 
+			 } 
+
+			 td, th { 
+				 padding: 4px; 
+				 text-align: inherit\0/; 
+			 } 
+
+			 td.justified { 
+				 text-align: justify; 
+			 } 
+
+			 td.pass { 
+				 font-weight: bold; 
+				 color: green; 
+			 } 
+
+			 td.fail { 
+				 font-weight: bold; 
+				 color: red; 
+			 } 
+
+			 td.done, td.screenshot { 
+				 font-weight: bold; 
+				 color: black; 
+			 } 
+
+			 td.debug { 
+				 font-weight: bold; 
+				 color: blue; 
+			 } 
+
+			 td.warning { 
+				 font-weight: bold; 
+				 color: orange; 
+			 } 
+		 </style> 
+
+		 <script> 
+			 function toggleMenu(objID) { 
+				 if (!document.getElementById) return; 
+				 var ob = document.getElementById(objID).style; 
+				 if(ob.display === 'none') { 
+					 try { 
+						 ob.display='table-row-group'; 
+					 } catch(ex) { 
+						 ob.display='block'; 
+					 } 
+				 } 
+				 else { 
+					 ob.display='none'; 
+				 } 
+			 } 
+			 function toggleSubMenu(objId) { 
+				 for(i=1; i<10000; i++) { 
+					 var ob = document.getElementById(objId.concat(i)); 
+					 if(ob === null) { 
+						 break; 
+					 } 
+					 if(ob.style.display === 'none') { 
+						 try { 
+							 ob.style.display='table-row'; 
+						 } catch(ex) { 
+							 ob.style.display='block'; 
+						 } 
+					 } 
+					 else { 
+						 ob.style.display='none'; 
+					 } 
+				 } 
+			 } 
+		 </script> 
+	 </head> 
+
+	 <body> 
+		 <table id='header'> 
+			 <colgroup> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+			 </colgroup> 
+
+			 <thead> 
+				 <tr class='heading'> 
+					 <th colspan='4' style='font-family:Copperplate Gothic Bold; font-size:1.0em;'> 
+						 testcase02_verifyServicesDropDownLinks 
+					 </th> 
+				 </tr> 
+				 <tr class='subheading'> 
+					 <th>&nbsp;Browser</th> 
+					 <th>&nbsp;iexplore</th> 
+					 <th>&nbsp;URL</th> 
+					 <th>&nbsp;http://www.suntechnologies.com</th> 
+				 </tr> 
+			 </thead> 
+		 </table> 
+
+		 <table id='main'> 
+			 <colgroup> 
+				 <col style='width: 8%' /> 
+				 <col style='width: 12%' /> 
+				 <col style='width: 62%' /> 
+				 <col style='width: 8%' /> 
+				 <col style='width: 10%' /> 
+			 </colgroup> 
+
+			 <thead> 
+				 <tr class='heading'> 
+					 <th>Step_No</th> 
+					 <th>Step_Name</th> 
+					 <th>Description</th> 
+					 <th>Status</th> 
+					 <th>Step_Time</th> 
+				 </tr> 
+			 </thead> 
+
+			 <tbody> 
+				 <tr class='section'> 
+					 <td colspan='5' onclick="toggleMenu('DetailedSteps')">+ Detailed Steps</td> 
+				 </tr> 
+			 </tbody> 
+			 <tbody id='DetailedSteps' style='display:table-row-group'> 
+				 <tr class='content' id='DetailedSteps1'> 
+					 <td>1</td> 
+					 <td class='justified'>OpenApplication</td> 
+					 <td class='justified'>Application Laucnhed Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:18 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps2'> 
+					 <td>2</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================Services=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps3'> 
+					 <td>3</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Staff Augmentation</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:33 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps4'> 
+					 <td>4</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Staff Augmentation</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-22-34_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:22:34 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps5'> 
+					 <td>5</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:35 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps6'> 
+					 <td>6</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Operating System</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:49 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps7'> 
+					 <td>7</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Operating System</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-22-49_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:22:50 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps8'> 
+					 <td>8</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:22:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps9'> 
+					 <td>9</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Database</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:03 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps10'> 
+					 <td>10</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Database Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-23-03_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:23:04 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps11'> 
+					 <td>11</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:05 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps12'> 
+					 <td>12</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Middleware</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:17 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps13'> 
+					 <td>13</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Middleware Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-23-17_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:23:17 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps14'> 
+					 <td>14</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:18 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps15'> 
+					 <td>15</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Virtualization</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps16'> 
+					 <td>16</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Virtualization Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-23-30_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:23:31 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps17'> 
+					 <td>17</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:32 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps18'> 
+					 <td>18</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Sharepoint Apps</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:44 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps19'> 
+					 <td>19</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->SharePoint Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-23-45_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:23:45 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps20'> 
+					 <td>20</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:46 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps21'> 
+					 <td>21</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Storage</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:23:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps22'> 
+					 <td>22</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Storage Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-23-58_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:24:07 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps23'> 
+					 <td>23</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:08 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps24'> 
+					 <td>24</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Servers</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:20 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps25'> 
+					 <td>25</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Server Management Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-24-20_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:24:21 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps26'> 
+					 <td>26</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:22 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps27'> 
+					 <td>27</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Network</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:34 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps28'> 
+					 <td>28</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Performance Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-24-34_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:24:34 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps29'> 
+					 <td>29</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:35 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps30'> 
+					 <td>30</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Game Development</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:48 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps31'> 
+					 <td>31</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Game Development</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-24-49_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:24:49 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps32'> 
+					 <td>32</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:24:50 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps33'> 
+					 <td>33</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Game Support Services</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:01 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps34'> 
+					 <td>34</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Game Support Services</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-25-02_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:25:02 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps35'> 
+					 <td>35</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:03 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps36'> 
+					 <td>36</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->IT Consulting</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:16 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps37'> 
+					 <td>37</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->IT Consulting</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-25-17_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:25:17 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps38'> 
+					 <td>38</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:18 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps39'> 
+					 <td>39</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Development & Implementation</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:31 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps40'> 
+					 <td>40</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Development and Implementation</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-25-31_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:25:31 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps41'> 
+					 <td>41</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:32 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps42'> 
+					 <td>42</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Maintenance</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:44 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps43'> 
+					 <td>43</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Maintenance</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-25-45_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:25:45 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps44'> 
+					 <td>44</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:46 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps45'> 
+					 <td>45</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Enterprise Solutions</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:57 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps46'> 
+					 <td>46</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Enterprise Solutions</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-25-57_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:25:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps47'> 
+					 <td>47</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:25:59 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps48'> 
+					 <td>48</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->QA Consulting</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:12 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps49'> 
+					 <td>49</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->QA Consulting</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-26-12_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:26:13 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps50'> 
+					 <td>50</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:14 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps51'> 
+					 <td>51</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Functional Testing</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:25 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps52'> 
+					 <td>52</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Functional Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-26-26_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:26:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps53'> 
+					 <td>53</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps54'> 
+					 <td>54</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Regression Test Automation</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:39 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps55'> 
+					 <td>55</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Regression Automation</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-26-39_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:26:40 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps56'> 
+					 <td>56</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:41 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps57'> 
+					 <td>57</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Game Testing</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:53 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps58'> 
+					 <td>58</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Game Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-26-53_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:26:54 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps59'> 
+					 <td>59</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:26:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps60'> 
+					 <td>60</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Performance Testing</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:04 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps61'> 
+					 <td>61</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Performance Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-04_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:05 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps62'> 
+					 <td>62</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:06 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps63'> 
+					 <td>63</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Compatibility Testing</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps64'> 
+					 <td>64</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Compatibility Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-19_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps65'> 
+					 <td>65</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:20 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps66'> 
+					 <td>66</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Security Testing</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:32 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps67'> 
+					 <td>67</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Security Testing</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-32_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:32 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps68'> 
+					 <td>68</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:33 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps69'> 
+					 <td>69</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Big Data Analytics</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:40 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps70'> 
+					 <td>70</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Big Data Analytics</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-41_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:41 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps71'> 
+					 <td>71</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:42 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps72'> 
+					 <td>72</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================Services=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:42 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps73'> 
+					 <td>73</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================Domain Expertise=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:42 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps74'> 
+					 <td>74</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Telecommunication</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:50 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps75'> 
+					 <td>75</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Telecommunication</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-51_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps76'> 
+					 <td>76</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:52 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps77'> 
+					 <td>77</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Retail</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:27:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps78'> 
+					 <td>78</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Retail</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-27-58_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:27:59 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps79'> 
+					 <td>79</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:00 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps80'> 
+					 <td>80</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Banking Financial Services and Insurance</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:08 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps81'> 
+					 <td>81</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Banking Financial Services and Insurance</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-28-09_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:28:09 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps82'> 
+					 <td>82</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:10 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps83'> 
+					 <td>83</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Gaming</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:18 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps84'> 
+					 <td>84</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Gaming</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-28-18_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:28:18 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps85'> 
+					 <td>85</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps86'> 
+					 <td>86</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Healthcare and Life Sciences</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps87'> 
+					 <td>87</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Healthcare and Life Sciences</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-28-27_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:28:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps88'> 
+					 <td>88</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:28 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps89'> 
+					 <td>89</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Education</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:36 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps90'> 
+					 <td>90</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Education</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-28-36_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:28:37 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps91'> 
+					 <td>91</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:38 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps92'> 
+					 <td>92</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Energy and Utility</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:46 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps93'> 
+					 <td>93</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Energy and Utility</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-28-46_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:28:46 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps94'> 
+					 <td>94</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:28:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps95'> 
+					 <td>95</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Aerospace & Defense</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:00 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps96'> 
+					 <td>96</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Aerospace and Defense</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-29-01_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:29:01 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps97'> 
+					 <td>97</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:02 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps98'> 
+					 <td>98</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Federal</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:13 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps99'> 
+					 <td>99</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Federal</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-29-14_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:29:14 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps100'> 
+					 <td>100</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:15 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps101'> 
+					 <td>101</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Social Mobile Analytics and Cloud</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:22 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps102'> 
+					 <td>102</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Social Mobile Analytics and Cloud</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-29-23_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:29:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps103'> 
+					 <td>103</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:24 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps104'> 
+					 <td>104</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================Domain Expertise=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:24 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps105'> 
+					 <td>105</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================Global Delivery=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:24 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps106'> 
+					 <td>106</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Offshore</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:35 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps107'> 
+					 <td>107</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Offshore</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-29-35_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:29:36 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps108'> 
+					 <td>108</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:36 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps109'> 
+					 <td>109</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Onsite</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:48 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps110'> 
+					 <td>110</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Onsite</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-29-49_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:29:49 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps111'> 
+					 <td>111</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:29:50 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps112'> 
+					 <td>112</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Hybrid</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:02 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps113'> 
+					 <td>113</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Hybrid</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-02_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:02 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps114'> 
+					 <td>114</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:03 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps115'> 
+					 <td>115</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Time and Material</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:14 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps116'> 
+					 <td>116</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Time and Material</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-15_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:15 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps117'> 
+					 <td>117</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:16 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps118'> 
+					 <td>118</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Fixed Cost</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps119'> 
+					 <td>119</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Fixed Cost</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-26_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps120'> 
+					 <td>120</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:28 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps121'> 
+					 <td>121</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->IP Protection</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:36 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps122'> 
+					 <td>122</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->IP Protection</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-36_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:37 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps123'> 
+					 <td>123</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:38 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps124'> 
+					 <td>124</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Framework</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:46 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps125'> 
+					 <td>125</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Frameworks</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-46_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps126'> 
+					 <td>126</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:48 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps127'> 
+					 <td>127</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================Global Delivery=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:48 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps128'> 
+					 <td>128</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================Jobs=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:48 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps129'> 
+					 <td>129</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Overview</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps130'> 
+					 <td>130</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Jobs Overview</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-30-55_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:30:56 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps131'> 
+					 <td>131</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:30:57 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps132'> 
+					 <td>132</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Full Time</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:10 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps133'> 
+					 <td>133</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->USA Full Time Jobs</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-31-10_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:31:11 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps134'> 
+					 <td>134</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:12 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps135'> 
+					 <td>135</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Contract</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps136'> 
+					 <td>136</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->USA Contract Jobs</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-31-24_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:31:25 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps137'> 
+					 <td>137</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps138'> 
+					 <td>138</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Full Time</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:38 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps139'> 
+					 <td>139</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->India Full Time Jobs</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-31-39_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:31:39 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps140'> 
+					 <td>140</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:40 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps141'> 
+					 <td>141</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Contract</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps142'> 
+					 <td>142</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->India Contract Jobs</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-31-52_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:31:52 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps143'> 
+					 <td>143</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:53 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps144'> 
+					 <td>144</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================Jobs=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:53 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps145'> 
+					 <td>145</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================About Us=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:31:53 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps146'> 
+					 <td>146</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Mission and Values</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:01 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps147'> 
+					 <td>147</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Mission and Values</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-01_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:01 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps148'> 
+					 <td>148</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:02 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps149'> 
+					 <td>149</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Corporate Fact Sheet</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:10 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps150'> 
+					 <td>150</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Corporate Fact Sheet</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-10_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:11 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps151'> 
+					 <td>151</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:12 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps152'> 
+					 <td>152</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Awards and Accolades</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:22 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps153'> 
+					 <td>153</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Awards and Accolades</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-22_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps154'> 
+					 <td>154</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:24 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps155'> 
+					 <td>155</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Partners</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps156'> 
+					 <td>156</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Partners</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-30_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:31 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps157'> 
+					 <td>157</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:32 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps158'> 
+					 <td>158</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Corporate Social Responsibility</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:40 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps159'> 
+					 <td>159</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Corporate Social Responsibility</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-41_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:41 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps160'> 
+					 <td>160</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:42 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps161'> 
+					 <td>161</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->Infrastructure</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:50 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps162'> 
+					 <td>162</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Infrastructure</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-32-50_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:32:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps163'> 
+					 <td>163</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:52 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps164'> 
+					 <td>164</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================About Us=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:52 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps165'> 
+					 <td>165</td> 
+					 <td class='justified'>VerifyMainMenu</td> 
+					 <td class='justified'>=================Locations=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:32:52 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps166'> 
+					 <td>166</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->USA</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:33:04 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps167'> 
+					 <td>167</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Contact Us</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-33-04_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:33:04 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps168'> 
+					 <td>168</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:33:05 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps169'> 
+					 <td>169</td> 
+					 <td class='justified'>ClickOnLink</td> 
+					 <td class='justified'>Clicked Successfully on Link->India</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:33:14 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps170'> 
+					 <td>170</td> 
+					 <td class='justified'>VerifyLink</td> 
+					 <td class='justified'>Navigated Successfuly to the page->Contact Us</td> 
+					 <td class='screenshot'><a href='..\Screenshots\testcase02_verifyServicesDropDownLinks_26-Dec-2014_03-33-14_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>26-Dec-2014 03:33:15 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps171'> 
+					 <td>171</td> 
+					 <td class='justified'>ClickOnHomeLink</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:33:16 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps172'> 
+					 <td>172</td> 
+					 <td class='justified'>DONE</td> 
+					 <td class='justified'>=================Locations=================</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>26-Dec-2014 03:33:16 PM</small></td> 
+				 </tr> 
+			 </tbody> 
+		 </table> 
+
+		 <table id='footer'> 
+			 <colgroup> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+			 </colgroup> 
+
+			 <tfoot> 
+				 <tr class='heading'> 
+					 <th colspan='4'>Execution Duration: 0:hh 11:mm10ss</th> 
+				 </tr> 
+				 <tr class='subheading'> 
+					 <td class='pass'>&nbsp;Steps passed</td> 
+					 <td class='pass'>&nbsp;: 0</td> 
+					 <td class='fail'>&nbsp;Steps failed</td> 
+					 <td class='fail'>&nbsp;: 0</td> 
+				 </tr> 
+			 </tfoot> 
+		 </table> 
+	 </body> 
+</html>

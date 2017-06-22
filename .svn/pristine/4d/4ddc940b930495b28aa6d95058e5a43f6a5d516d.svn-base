@@ -1,0 +1,689 @@
+<!DOCTYPE html> 
+<html> 
+	 <head> 
+		 <meta charset='UTF-8'> 
+		 <title> - validate_Filters Automation Execution Results</title> 
+
+		 <style type='text/css'> 
+			 body { 
+				 background-color: #282A2A; 
+				 font-family: Verdana, Geneva, sans-serif; 
+				 text-align: center; 
+			 } 
+
+			 small { 
+				 font-size: 0.5em; 
+			 } 
+
+			 table { 
+				 border: 1px solid #4D7C7B; 
+				 border-collapse: collapse; 
+				 border-spacing: 0px; 
+				 width: 1000px; 
+				 margin-left: auto; 
+				 margin-right: auto; 
+			 } 
+
+			 tr.heading { 
+				 background-color: #495758; 
+				 color: #95A3A4; 
+				 font-size: 0.7em; 
+				 font-weight: bold; 
+			 } 
+
+			 tr.subheading { 
+				 background-color: #95A3A4; 
+				 color: #495758; 
+				 font-weight: bold; 
+				 font-size: 0.7em; 
+				 text-align: justify; 
+			 } 
+
+			 tr.section { 
+				 background-color: #8B9292; 
+				 color: #001429; 
+				 cursor: pointer; 
+				 font-weight: bold; 
+				 font-size: 0.7em; 
+				 text-align: justify; 
+			 } 
+
+			 tr.subsection { 
+				 cursor: pointer; 
+			 } 
+
+			 tr.content { 
+				 background-color: #EDEEF0; 
+				 color: #282A2A; 
+				 font-size: 0.7em; 
+				 display: table-row; 
+			 } 
+
+			 td, th { 
+				 padding: 4px; 
+				 text-align: inherit\0/; 
+			 } 
+
+			 td.justified { 
+				 text-align: justify; 
+			 } 
+
+			 td.pass { 
+				 font-weight: bold; 
+				 color: green; 
+			 } 
+
+			 td.fail { 
+				 font-weight: bold; 
+				 color: red; 
+			 } 
+
+			 td.done, td.screenshot { 
+				 font-weight: bold; 
+				 color: black; 
+			 } 
+
+			 td.debug { 
+				 font-weight: bold; 
+				 color: blue; 
+			 } 
+
+			 td.warning { 
+				 font-weight: bold; 
+				 color: orange; 
+			 } 
+		 </style> 
+
+		 <script> 
+			 function toggleMenu(objID) { 
+				 if (!document.getElementById) return; 
+				 var ob = document.getElementById(objID).style; 
+				 if(ob.display === 'none') { 
+					 try { 
+						 ob.display='table-row-group'; 
+					 } catch(ex) { 
+						 ob.display='block'; 
+					 } 
+				 } 
+				 else { 
+					 ob.display='none'; 
+				 } 
+			 } 
+			 function toggleSubMenu(objId) { 
+				 for(i=1; i<10000; i++) { 
+					 var ob = document.getElementById(objId.concat(i)); 
+					 if(ob === null) { 
+						 break; 
+					 } 
+					 if(ob.style.display === 'none') { 
+						 try { 
+							 ob.style.display='table-row'; 
+						 } catch(ex) { 
+							 ob.style.display='block'; 
+						 } 
+					 } 
+					 else { 
+						 ob.style.display='none'; 
+					 } 
+				 } 
+			 } 
+		 </script> 
+	 </head> 
+
+	 <body> 
+		 <table id='header'> 
+			 <colgroup> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+			 </colgroup> 
+
+			 <thead> 
+				 <tr class='heading'> 
+					 <th colspan='4' style='font-family:Copperplate Gothic Bold; font-size:1.0em;'> 
+						 validate_Filters 
+					 </th> 
+				 </tr> 
+				 <tr class='subheading'> 
+					 <th>&nbsp;Browser</th> 
+					 <th>&nbsp;firefox</th> 
+					 <th>&nbsp;URL</th> 
+					 <th>&nbsp;http://popcliqs.com/beta/</th> 
+				 </tr> 
+			 </thead> 
+		 </table> 
+
+		 <table id='main'> 
+			 <colgroup> 
+				 <col style='width: 8%' /> 
+				 <col style='width: 12%' /> 
+				 <col style='width: 62%' /> 
+				 <col style='width: 8%' /> 
+				 <col style='width: 10%' /> 
+			 </colgroup> 
+
+			 <thead> 
+				 <tr class='heading'> 
+					 <th>Step_No</th> 
+					 <th>Step_Name</th> 
+					 <th>Description</th> 
+					 <th>Status</th> 
+					 <th>Step_Time</th> 
+				 </tr> 
+			 </thead> 
+
+			 <tbody> 
+				 <tr class='section'> 
+					 <td colspan='5' onclick="toggleMenu('DetailedSteps')">+ Detailed Steps</td> 
+				 </tr> 
+			 </tbody> 
+			 <tbody id='DetailedSteps' style='display:table-row-group'> 
+				 <tr class='content' id='DetailedSteps1'> 
+					 <td>1</td> 
+					 <td class='justified'>OpenPopCliqsApplication</td> 
+					 <td class='justified'>Application Laucnhed Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:45:20 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps2'> 
+					 <td>2</td> 
+					 <td class='justified'>EnterUsername</td> 
+					 <td class='justified'>Entered Username->prakash@suntechnologies.com</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:45:25 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps3'> 
+					 <td>3</td> 
+					 <td class='justified'>EnterPassword</td> 
+					 <td class='justified'>Entered Password->1234567</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:45:25 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps4'> 
+					 <td>4</td> 
+					 <td class='justified'>EnterCredentials</td> 
+					 <td class='justified'>Entered Username and Password</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-45-25_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:45:25 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps5'> 
+					 <td>5</td> 
+					 <td class='justified'>ClickOnSigninButton</td> 
+					 <td class='justified'>Clicked Successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:29 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps6'> 
+					 <td>6</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Sports</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:29 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps7'> 
+					 <td>7</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps8'> 
+					 <td>8</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps9'> 
+					 <td>9</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-46-30_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:46:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps10'> 
+					 <td>10</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:30 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps11'> 
+					 <td>11</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-46-34_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:46:35 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps12'> 
+					 <td>12</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:46:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps13'> 
+					 <td>13</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Sports</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:46:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps14'> 
+					 <td>14</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Professional</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps15'> 
+					 <td>15</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps16'> 
+					 <td>16</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:58 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps17'> 
+					 <td>17</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-46-58_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:46:59 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps18'> 
+					 <td>18</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:46:59 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps19'> 
+					 <td>19</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-47-03_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:47:03 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps20'> 
+					 <td>20</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:47:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps21'> 
+					 <td>21</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Professional</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:47:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps22'> 
+					 <td>22</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Arts</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps23'> 
+					 <td>23</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:26 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps24'> 
+					 <td>24</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps25'> 
+					 <td>25</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-47-27_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:47:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps26'> 
+					 <td>26</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:27 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps27'> 
+					 <td>27</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-47-31_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:47:31 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps28'> 
+					 <td>28</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps29'> 
+					 <td>29</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Arts</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps30'> 
+					 <td>30</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Education</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps31'> 
+					 <td>31</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps32'> 
+					 <td>32</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps33'> 
+					 <td>33</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-47-55_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps34'> 
+					 <td>34</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:47:55 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps35'> 
+					 <td>35</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-47-59_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:48:00 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps36'> 
+					 <td>36</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps37'> 
+					 <td>37</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Education</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps38'> 
+					 <td>38</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Outdoor</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps39'> 
+					 <td>39</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps40'> 
+					 <td>40</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps41'> 
+					 <td>41</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-48-23_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps42'> 
+					 <td>42</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:23 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps43'> 
+					 <td>43</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-48-28_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:48:28 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps44'> 
+					 <td>44</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps45'> 
+					 <td>45</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Outdoor</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps46'> 
+					 <td>46</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Party</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps47'> 
+					 <td>47</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps48'> 
+					 <td>48</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps49'> 
+					 <td>49</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-48-51_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps50'> 
+					 <td>50</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:48:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps51'> 
+					 <td>51</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-48-56_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:48:56 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps52'> 
+					 <td>52</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps53'> 
+					 <td>53</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Party</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps54'> 
+					 <td>54</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Social</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps55'> 
+					 <td>55</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps56'> 
+					 <td>56</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps57'> 
+					 <td>57</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-49-19_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps58'> 
+					 <td>58</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:19 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps59'> 
+					 <td>59</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-49-23_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:49:24 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps60'> 
+					 <td>60</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps61'> 
+					 <td>61</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> Social</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps62'> 
+					 <td>62</td> 
+					 <td class='justified'>SelectValueForCategory</td> 
+					 <td class='justified'>Selected ->Support Group</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps63'> 
+					 <td>63</td> 
+					 <td class='justified'>SelectTimeInterval</td> 
+					 <td class='justified'>Selected ->72</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps64'> 
+					 <td>64</td> 
+					 <td class='justified'>ËnterSearchFilter</td> 
+					 <td class='justified'>Entered the search filter-></td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps65'> 
+					 <td>65</td> 
+					 <td class='justified'>EnterAllTheFilters</td> 
+					 <td class='justified'>Enter all the filter details</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-49-47_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps66'> 
+					 <td>66</td> 
+					 <td class='justified'>ClickOnSearchButton</td> 
+					 <td class='justified'>Clicked on button successfully</td> 
+					 <td class='done'>DONE</td> 
+					 <td><small>30-Dec-2014 08:49:47 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps67'> 
+					 <td>67</td> 
+					 <td class='justified'>VerifyBubblesdisplayedAfterFiltering</td> 
+					 <td class='justified'>Bubbles are displayed</td> 
+					 <td class='screenshot'><a href='..\Screenshots\validate_Filters_30-Dec-2014_08-49-51_PM.png'>SCREENSHOT</a></td> 
+					 <td><small>30-Dec-2014 08:49:51 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps68'> 
+					 <td>68</td> 
+					 <td class='justified'>VerifySportsImages</td> 
+					 <td class='justified'>Sports Images are displayed</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:50:15 PM</small></td> 
+				 </tr> 
+				 <tr class='content' id='DetailedSteps69'> 
+					 <td>69</td> 
+					 <td class='justified'>VerifyOtherImages</td> 
+					 <td class='justified'>Other Images are not displayed when filtered using-> SupportGroup</td> 
+					 <td class='pass'>PASS</td> 
+					 <td><small>30-Dec-2014 08:50:15 PM</small></td> 
+				 </tr> 
+			 </tbody> 
+		 </table> 
+
+		 <table id='footer'> 
+			 <colgroup> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+				 <col style='width: 25%' /> 
+			 </colgroup> 
+
+			 <tfoot> 
+				 <tr class='heading'> 
+					 <th colspan='4'>Execution Duration: 0:hh 4:mm58ss</th> 
+				 </tr> 
+				 <tr class='subheading'> 
+					 <td class='pass'>&nbsp;Steps passed</td> 
+					 <td class='pass'>&nbsp;: 16</td> 
+					 <td class='fail'>&nbsp;Steps failed</td> 
+					 <td class='fail'>&nbsp;: 0</td> 
+				 </tr> 
+			 </tfoot> 
+		 </table> 
+	 </body> 
+</html>

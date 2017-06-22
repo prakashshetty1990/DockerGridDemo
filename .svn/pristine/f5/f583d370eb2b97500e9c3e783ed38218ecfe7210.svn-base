@@ -1,0 +1,38 @@
+package com.sun.framework;
+
+
+/**
+ * Exception class for the framework
+ * @author sun
+ * @version 3.0
+ * @since October 2011
+ */
+@SuppressWarnings("serial")
+public class FrameworkException extends RuntimeException
+{
+	/**
+	 * The step name to be specified for the exception
+	 */
+	public String errorName = "Error";
+	
+	
+	/**
+	 * Constructor to initialize the exception from the framework
+	 * @param errorDescription The Exception message to be thrown
+	 */
+	public FrameworkException(String errorDescription)
+	{
+		super(errorDescription);
+	}
+	
+	/**
+	 * Constructor to initialize the exception from the framework
+	 * @param errorName The step name for the error
+	 * @param errorDescription The Exception message to be thrown
+	 */
+	public FrameworkException(String errorName, String errorDescription)
+	{
+		super(errorDescription);
+		this.errorName = errorName;
+	}
+}

@@ -1,0 +1,37 @@
+package com.sun.data;
+
+import com.sun.utils.DataTable;
+
+/**
+ * User Login Details 
+ *
+ */
+public class PopCliqsDetails {
+	public String userID;
+	public String password;	
+	public String category;	
+	public String ageLimit;
+	public String venue;	
+	public String zipCode;	
+	
+	
+	public PopCliqsDetails(String emailAddress,String password,String category,String ageLimit,String venue,String zipCode){
+		this.userID = emailAddress;
+		this.password = password;
+		this.category = category;
+		this.ageLimit = ageLimit;
+		this.venue = venue;
+		this.zipCode = zipCode;
+		
+	}
+	
+	public static PopCliqsDetails loadFromDatatable(DataTable dataTable){
+		return new PopCliqsDetails(dataTable.getValue("UserName"),
+								dataTable.getValue("Password"),
+								dataTable.getValue("Category"),
+								dataTable.getValue("AgeLimit"),
+								dataTable.getValue("Venue"),
+								dataTable.getValue("ZipCode"));								
+	}	
+}
+

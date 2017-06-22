@@ -1,0 +1,75 @@
+package com.sun.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sun.data.PopCliqsDetails;
+import com.sun.framework.Status;
+import com.sun.utils.SeleniumReport;
+
+/**
+ * Represents default page of the application
+ * 
+ */
+public class PopCliqsLogInPage extends Page {
+
+
+
+	@FindBy(xpath="//*[@name='email']")
+	private WebElement weUsername;
+
+	@FindBy(xpath="//*[@name='password']")
+	private WebElement wePassword;
+
+	@FindBy(xpath="//button[text()='Sign in']")
+	private WebElement btnSignIn;
+
+
+	protected static String LOGIN_PAGE_TITLE = "Popcliqs";
+
+	public PopCliqsLogInPage(WebDriver browser, SeleniumReport report) {
+		super(browser, report);		
+	}
+
+	@Override
+	protected boolean isValidPage() {
+		if (browser.getTitle().trim().contains(LOGIN_PAGE_TITLE)) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	protected void waitForPageLoad() {
+		try{
+			new WebDriverWait(browser,30).
+			until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@name='email']")));	
+		}catch(Exception e){
+			report.reportFailEvent("Check PopCliqs Login Page","PopCliqs Login Page is not displayed");
+		}
+	}
+
+	public PopCliqsHomePage loginToPopCliqs(PopCliqsDetails loginDetails){
+		waitForElement(weUsername);
+		if(isElementPresent(weUsername)){
+			weUsername.sendKeys(loginDetails.userID);
+			report.reportDoneEvent("EnterUsername", "Entered Username->"+loginDetails.userID);
+			wePassword.sendKeys(loginDetails.password);
+			report.reportDoneEvent("EnterPassword", "Entered Password->"+loginDetails.password);
+			report.updateTestLog("EnterCredentials", "Entered Username and Password", Status.SCREENSHOT);
+			btnSignIn.click();
+			report.reportDoneEvent("ClickOnSigninButton", "Clicked Successfully");			
+		}else{
+			report.reportFailEvent("LoginToApplication", "LoginPage is not displayed");
+		}
+		return new PopCliqsHomePage(browser, report);
+	}
+
+}
+
+
+

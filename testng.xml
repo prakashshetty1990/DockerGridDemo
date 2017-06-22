@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><suite name="Suite" parallel="tests">
+  <test id="1" name="Windows1">
+    <parameter name="selenium.machinename" value="Windows1"/>
+    <parameter name="selenium.host" value="192.168.99.100"/>
+    <parameter name="selenium.port" value="4446"/>
+    <parameter name="selenium.browser" value="firefox"/>
+    <parameter id="1" name="selenium.url" value="Change Url later"/>
+    <parameter id="1" name="selenium.os" value="Windows"/>
+    <parameter id="1" name="selenium.browserVersion" value="41"/>
+    <parameter id="1" name="selenium.osVersion" value="7"/>
+    <classes name="1">
+      <class id="1" name="TestCases.TestCases"/>
+      <methods id="1">
+        <include name="testcase01"/>
+        <include name="testcase02"/>
+        <exclude name="testcase03"/>
+        <exclude name="testcase04"/>
+        <exclude name="testcase05"/>
+      </methods>
+    </classes>
+  </test>
+  <test id="2" name="Windows2">
+    <parameter name="selenium.machinename" value="Windows2"/>
+    <parameter name="selenium.host" value="192.168.99.100"/>
+    <parameter name="selenium.port" value="4446"/>
+    <parameter name="selenium.browser" value="chrome"/>
+    <parameter id="2" name="selenium.url" value="Change Url later"/>
+    <parameter id="2" name="selenium.os" value="Windows"/>
+    <parameter id="2" name="selenium.browserVersion" value="45"/>
+    <parameter id="2" name="selenium.osVersion" value="7"/>
+    <classes name="2">
+      <class id="2" name="TestCases.TestCases"/>
+      <methods id="2">
+        <include name="testcase01"/>
+        <include name="testcase02"/>
+        <exclude name="testcase03"/>
+        <exclude name="testcase04"/>
+        <exclude name="testcase05"/>
+      </methods>
+    </classes>
+  </test>
+  <test id="3" name="Android">
+    <parameter name="selenium.machinename" value="Android"/>
+    <parameter name="selenium.host" value="192.168.99.100"/>
+    <parameter name="selenium.port" value="4723"/>
+    <parameter name="selenium.browser" value="Androidchrome"/>
+    <parameter id="3" name="selenium.url" value="Change Url later"/>
+    <parameter id="3" name="selenium.os" value="Android"/>
+    <parameter id="3" name="selenium.browserVersion" value="38"/>
+    <parameter id="3" name="selenium.osVersion" value="5.1"/>
+    <classes name="3">
+      <class id="3" name="TestCases.TestCases"/>
+      <methods id="3">
+        <include name="testcase01"/>
+        <include name="testcase02"/>
+        <exclude name="testcase03"/>
+        <exclude name="testcase04"/>
+        <exclude name="testcase05"/>
+      </methods>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="tests">
+  <test name="Windows1(failed)" parallel="tests">
+    <parameter name="selenium.port" value="4446"/>
+    <parameter name="selenium.osVersion" value="7"/>
+    <parameter name="selenium.host" value="192.168.99.100"/>
+    <parameter name="selenium.machinename" value="Windows1"/>
+    <parameter name="selenium.browserVersion" value="41"/>
+    <parameter name="selenium.os" value="Windows"/>
+    <parameter name="selenium.browser" value="firefox"/>
+    <parameter name="selenium.url" value="Change Url later"/>
+    <classes>
+      <class name="TestCases.TestCases">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="openApplication"/>
+          <include name="openApplication"/>
+          <include name="openApplication"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="closeAppication"/>
+          <include name="closeAppication"/>
+          <include name="closeAppication"/>
+          <include name="testcase01"/>
+        </methods>
+      </class> <!-- TestCases.TestCases -->
+    </classes>
+  </test> <!-- Windows1(failed) -->
+  <test name="Android(failed)" parallel="tests">
+    <parameter name="selenium.port" value="4723"/>
+    <parameter name="selenium.osVersion" value="5.1"/>
+    <parameter name="selenium.host" value="192.168.99.100"/>
+    <parameter name="selenium.machinename" value="Android"/>
+    <parameter name="selenium.browserVersion" value="38"/>
+    <parameter name="selenium.os" value="Android"/>
+    <parameter name="selenium.browser" value="Androidchrome"/>
+    <parameter name="selenium.url" value="Change Url later"/>
+    <classes>
+      <class name="TestCases.TestCases">
+        <methods>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="testcase02"/>
+          <include name="openApplication"/>
+          <include name="openApplication"/>
+          <include name="openApplication"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="closeAppication"/>
+          <include name="closeAppication"/>
+          <include name="closeAppication"/>
+          <include name="testcase01"/>
+        </methods>
+      </class> <!-- TestCases.TestCases -->
+    </classes>
+  </test> <!-- Android(failed) -->
+</suite> <!-- Failed suite [Suite] -->

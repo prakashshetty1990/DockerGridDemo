@@ -1,0 +1,31 @@
+package com.sun.utils;
+
+import java.io.File;
+
+public class ReportPath {
+	private static ReportPath instance = null;
+	private String reportPath;
+
+	@SuppressWarnings("unused")
+	protected ReportPath() {
+		reportPath = TestUtils.getRelativePath() + File.separator
+				+ FrameworkConstants.RESULT_FOLDER + File.separator + "Result_"
+				+ TestUtils.getTimeStamp();
+		boolean success = (new File(reportPath)).mkdirs();
+	}
+
+	/**
+	 * Get the current report folder
+	 * @return
+	 */
+	public String getReportPath(){
+		return reportPath;
+	}
+	
+	public static synchronized ReportPath getInstance() {
+		if (instance == null) {
+			instance = new ReportPath();
+		}
+		return instance;
+	}
+}

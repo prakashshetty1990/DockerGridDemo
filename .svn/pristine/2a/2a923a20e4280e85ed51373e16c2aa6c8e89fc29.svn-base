@@ -1,0 +1,21 @@
+#test
+test=UAT
+#test=QA
+
+
+#url
+#uat_url=http://www.suntechnologies.com
+uat_url=http://popcliqs.com/beta/
+qa_url=
+
+
+#Browser 
+browser=iexplore
+#browser=firefox
+#browser=chrome
+#browser=safari
+
+
+#Execution Type
+uat_SheetName=TestData_uat
+qa_SheetName=TestData_qa

@@ -1,0 +1,653 @@
+package com.sun.pages;
+
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.SortedSet;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Match;
+import org.sikuli.script.Screen;
+
+import com.sun.data.PopCliqsDetails;
+import com.sun.framework.Status;
+import com.sun.utils.SeleniumReport;
+import com.thoughtworks.selenium.webdriven.commands.IsElementPresent;
+
+/**
+ * Represents default page of the application
+ * 
+ */
+public class PopCliqsHomePage extends Page {
+
+
+
+	@FindBy(xpath="//*[@id='mainCanvas-lg']")
+	private WebElement weCanvasImage;
+
+	@FindBy(xpath="//*[@id='title']")
+	private WebElement weNewCliqTitle;
+
+	@FindBy(xpath="//*[@id='description']")
+	private WebElement weNewCliqDescription;
+
+	@FindBy(xpath="//*[@id='category_id']")
+	private WebElement weNewCliqCategory;
+
+	@FindBy(xpath="//*[@id='location']")
+	private WebElement weNewCliqVenue;
+
+	@FindBy(xpath="//*[@id='autocomplete']")
+	private WebElement weNewCliqAddress;
+
+	@FindBy(xpath="//*[@id='postal_code']")
+	private WebElement weNewCliqZip;
+
+	@FindBy(xpath="//*[@id='capacity']")
+	private WebElement weNewCliqCapacity;
+
+	@FindBy(xpath="//*[@id='start_date']")
+	private WebElement weNewCliqStartDate;
+
+	@FindBy(xpath="//*[@id='end_date']")
+	private WebElement weNewCliqEndDate;
+
+	@FindBy(xpath="//*[@id='submit_btn']")
+	private WebElement weNewCliqCreate;
+
+	@FindBy(xpath="//*[@id='category']")
+	private WebElement weSelectCategory;
+
+	@FindBy(xpath="//*[@id='ti']")
+	private WebElement weSelectTimeInterval;
+
+	@FindBy(xpath="//*[@id='search_t']")
+	private WebElement weSearchFilter;
+
+	@FindBy(xpath="//*[@id='navbar_id']/form[2]/button")
+	private WebElement btnSearch;
+
+	@FindBy(xpath="//*[@id='msgModal']//button[text()='close']")
+	private WebElement btnSuccssClose;
+	
+	@FindBy(xpath="//div[@class='modal-footer']/button[2]")
+	private WebElement btnsave;
+	
+	@FindBy(xpath="//*[@id='eventdetails']/div/div/div[3]/button[text()='close']")
+	private WebElement btnClose;
+	
+	@FindBy(id="save_btn")
+	private WebElement btnPopIt;
+	
+	@FindBy(xpath="//*[@id='interested-tab']/tr[1]/td[4]/button")
+	private WebElement btnRemove;
+	
+	@FindBy(xpath="//*[@id='history']/div/div/div[2]/div[2]/button")
+	private WebElement btnCloseMyCliqs;
+	
+	@FindBy(xpath="//*[@id='navbar_id']/form[1]/button")
+	private WebElement btnLogOut;
+	
+	@FindBy(xpath="//*[@name='email']")
+	private WebElement weUsername;	
+
+	@FindBy(xpath="//footer/p/a[1]")
+	private WebElement lnkAbout;
+	
+	@FindBy(xpath="//footer/p/a[2]")
+	private WebElement lnkTerms;
+	
+	@FindBy(xpath="//footer/p/a[3]")
+	private WebElement lnkHelp;
+	
+	@FindBy(xpath="//h4[contains(text(),'About Us')]")
+	private WebElement weAboutUs;
+	
+	@FindBy(xpath="//h4[contains(text(),'Privacy Policy and')]")
+	private WebElement weTerms;
+	
+	@FindBy(xpath="//*[@id='myModalabout']/div/div/div[3]/button")
+	private WebElement btnCloseAbout;
+	
+	@FindBy(xpath="//*[@id='myModal']/div/div/div[3]/button")
+	private WebElement btnCloseterms;	
+	
+			
+	
+	
+	
+	
+	protected static String HOME_PAGE_TITLE = "Popcliqs";
+
+	public PopCliqsHomePage(WebDriver browser, SeleniumReport report) {
+		super(browser, report);		
+	}
+
+	@Override
+	protected boolean isValidPage() {
+		if (browser.getTitle().trim().contains(HOME_PAGE_TITLE)) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	protected void waitForPageLoad() {
+		try{
+			new WebDriverWait(browser,160).
+			until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='mainCanvas-lg']")));				
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+			report.reportFailEvent("Check PopCliqs Application Home Page","Home Page is not displayed");
+		}
+
+
+	}
+
+	public void verifyHomePage() {
+		waitForElement(weCanvasImage);
+		if(isElementPresent(weCanvasImage)){
+			report.updateTestLog("VerifyHomePage", "PopCliqs Home page is displayed as expected", Status.SCREENSHOT);
+		}else{
+			report.reportFailEvent("Verify HomePage", "Home Page is not displayed as expected");
+		}		
+	}
+
+	public void clickOnNewCliq() {
+		try {	
+			String strPath = sikuliImagePath();
+			Screen s=new Screen();		
+			s.click(strPath+"MainMenu.png");
+			sleep(2000);
+			s.click(strPath+"NewCliq.png");
+		} catch (FindFailed e) {
+			report.reportFailEvent("UnableToClickOnNewCliq", "Error Message is->"+e.getMessage());
+		}
+	}
+
+	public void createNewCliq(PopCliqsDetails popCliqsDetails) {
+		waitForElement(weNewCliqTitle);
+		Date date = new Date();
+		String strDate = date.toString();
+		String strNewTitle = "AutoTestNewCliqTitle"+strDate;
+		weNewCliqTitle.sendKeys(strNewTitle);
+		report.reportDoneEvent("EnterTitle", "Title is->"+strNewTitle);		
+		weNewCliqDescription.sendKeys("Auto Test New Description");
+		report.reportDoneEvent("EnterDescription", "Description is-> Auto Test New Description");
+		sleep(1000);
+		Select sel = new Select(weNewCliqCategory);
+		sel.selectByVisibleText(popCliqsDetails.category);
+		report.reportDoneEvent("SelectCategory", "Category Selected is->"+popCliqsDetails.category);
+		weNewCliqVenue.sendKeys(popCliqsDetails.venue);
+		weNewCliqAddress.sendKeys(popCliqsDetails.venue);
+		waitForElement(By.xpath("//div[@class='pac-container']/div[1]"));
+		browser.findElement(By.xpath("//div[@class='pac-container']/div[1]")).click();
+		report.reportDoneEvent("SelectVenueAndAddress", "Venue and Address is->"+popCliqsDetails.venue);
+		sleep(1000);
+		report.updateTestLog("EnterDetails", "Details are entered for Creating new Cliq", Status.SCREENSHOT);
+		moveToElement(weNewCliqZip);
+		sleep(1000);
+		weNewCliqZip.sendKeys(popCliqsDetails.zipCode);
+		if(popCliqsDetails.ageLimit.contains("21")){
+			browser.findElement(By.id("age_limit_21")).click();
+		}else if(popCliqsDetails.ageLimit.contains("18")){
+			browser.findElement(By.id("age_limit_18")).click();
+		}else {
+			browser.findElement(By.id("age_limit_0")).click();
+		}
+		moveToElement(weNewCliqCapacity);
+		weNewCliqCapacity.sendKeys("25");
+		moveToElement(weNewCliqStartDate);
+		weNewCliqStartDate.click();
+		waitForElement(By.xpath("//td[contains(@class,'today')]/following-sibling::td"));
+		List<WebElement> weDate = browser.findElements(By.xpath("//td[contains(@class,'today')]/following-sibling::td"));
+		if(weDate.size()>0){
+			String strDateClass = weDate.get(0).getAttribute("class");
+			if(!(strDateClass.contains("unselectable"))){
+				weDate.get(0).click();
+			}else{
+				browser.findElement(By.xpath("//*[@title='Next']")).click();
+				sleep(1000);
+				browser.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr/td/a[text()='1']")).click();
+			}
+		}else{
+			browser.findElement(By.xpath("//*[@title='Next']")).click();
+			sleep(1000);
+			browser.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr/td/a[text()='1']")).click();			
+		}
+		report.updateTestLog("EnterAllDetails", "Entered all the details", Status.SCREENSHOT);
+		moveToElement(weNewCliqCreate);
+		sleep(1000);
+		clickManyTimes(weNewCliqCreate);				
+		sleep(5000);		
+		waitForElement(By.xpath("//*[@id='messageTxt']"));		
+		if(isElementPresent(By.xpath("//*[@id='messageTxt']"))){
+			report.reportPassEvent("VerifyNewCliqCreated", "New Cliq is created successfully");
+			btnSuccssClose.click();
+		}else{
+			report.reportFailEvent("VerifyNewCliqCreated", "New Cliq is not created ");
+		}
+	}
+
+	public void selectFilterinAccountBanner(String strCategory,String strTime,String strSearchWord) {
+		waitForElement(weSelectCategory);
+		sleep(1000);
+		Select sel = new Select(weSelectCategory);
+		sel.selectByVisibleText(strCategory);
+		report.reportDoneEvent("SelectValueForCategory", "Selected ->"+strCategory);
+		Select sel1 = new Select(weSelectTimeInterval);
+		sel1.selectByValue(strTime);
+		report.reportDoneEvent("SelectTimeInterval", "Selected ->"+strTime);
+		weSearchFilter.sendKeys(strSearchWord);
+		report.reportDoneEvent("ËnterSearchFilter", "Entered the search filter->"+strSearchWord);
+		report.updateTestLog("EnterAllTheFilters", "Enter all the filter details", Status.SCREENSHOT);
+		btnSearch.click();
+		report.reportDoneEvent("ClickOnSearchButton", "Clicked on button successfully");
+		sleep(1000);
+		browser.navigate().refresh();
+		sleep(2000);
+		report.updateTestLog("VerifyBubblesdisplayedAfterFiltering", "Bubbles are displayed", Status.SCREENSHOT);		
+	}
+
+	public int verifyNumberOfImages(String strImage) {
+		int i=0;
+		String strPath = sikuliImagePath();
+		try {					
+			Screen s=new Screen();					
+			Iterator<Match> icons = s.findAll(strPath+""+strImage+".png");	
+			while(icons.next() != null){
+				i++;
+			}
+			System.out.println("Size is->"+i);
+		} catch (FindFailed e) {
+			i=0;
+		}
+		return i;
+	}
+
+	public void verifyNewlyCreatedCliqInHomePage(int countBefore, int countAfter) {
+		if(countBefore<countAfter){
+			report.updateTestLog("VerifyNewCliqCreated", "New Cliq created is displayed in Canvas", Status.SCREENSHOT);
+		}else{
+			report.reportFailEvent("VerifyNewCliqCreated", "New Cliq created is not displayed in Canvas");
+		}
+	}
+
+	public void verifyImagesAfterFiltering(String strFiltered) {
+		int Sports = verifyNumberOfImages("Sports");
+		int Arts = verifyNumberOfImages("Arts");
+		int Education = verifyNumberOfImages("Education");
+		int Outdoor = verifyNumberOfImages("Outdoor");
+		int Party = verifyNumberOfImages("Party");
+		int Professional = verifyNumberOfImages("Professional");
+		int Social = verifyNumberOfImages("Social");
+		int SupportGroup = verifyNumberOfImages("SupportGroup");
+		switch (strFiltered) {
+		case "Sports":
+			if(Sports>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Outdoor==0&&Party==0&& Professional==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Arts": 
+			if(Arts>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Sports==0&&Education==0&&Outdoor==0&&Party==0&& Professional==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Education":
+			if(Education>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Sports==0&&Outdoor==0&&Party==0&& Professional==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Outdoor": 
+			if(Outdoor>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Sports==0&&Party==0&& Professional==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Party": 
+			if(Party>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Outdoor==0&&Sports==0&& Professional==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Professional": 
+			if(Professional>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Outdoor==0&&Party==0&& Sports==0 && Social==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "Social":
+			if(Social>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Outdoor==0&&Party==0&& Professional==0 && Sports==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "SupportGroup": 
+			if(SupportGroup>=0){
+				report.reportPassEvent("VerifySportsImages", "Sports Images are displayed");						
+			}
+			if(Arts==0&&Education==0&&Outdoor==0&&Party==0&& Professional==0 && Social==0 && Sports==0){
+				report.reportPassEvent("VerifyOtherImages", "Other Images are not displayed when filtered using-> "+strFiltered);
+			}else{
+				report.reportFailEvent("VerifyOtherImages", "Other Images also displayed when filtered using-> "+strFiltered);
+			}
+			break;
+		case "None":
+			if(Arts==0&&Education==0&&Outdoor==0&&Party==0&& Professional==0 && Social==0 && Sports==0 && SupportGroup==0){
+				report.reportPassEvent("VerifyEventImages", "No Event Images are displayed as expected");
+				report.updateTestLog("EventImages", "Excepcted 'No Events should be displatyed' - Actual 'No events are displayed'", Status.SCREENSHOT);
+				sleep(2000);
+			}else{
+				report.reportFailEvent("EventImages", "Excepcted 'No Events should be displatyed' - Actual 'event Images are displayed'");
+			}
+			break;
+		case "All":
+			if(Arts>=0&&Education>=0&&Outdoor>=0&&Party>=0&& Professional>=0 && Social>=0 && Sports>=0 && SupportGroup>=0){
+				report.reportPassEvent("VerifyEventImages", "All the Event Images are displayed as expected");
+				report.updateTestLog("EventImages", "Excepcted 'All Events should be displatyed' - Actual 'All events are displayed'", Status.SCREENSHOT);
+				sleep(2000);
+			}else{
+				report.reportFailEvent("EventImages", "Excepcted 'All Events should be displatyed' - Actual 'No events are displayed'");
+			}
+			break;
+		default:
+			break;
+		}
+
+
+	}
+
+	public void clickOnSettings() {
+		/*try {	
+			String strPath = sikuliImagePath();
+			Screen s=new Screen();	
+			s.hover(strPath+"MainMenu.png");
+			s.click(strPath+"MainMenu.png");
+			sleep(2000);
+			//s.wait("Images/Settings.png");
+			s.click(strPath+"Settings.png");
+		} catch (FindFailed e) {
+			report.reportFailEvent("UnableToClickOnNewCliq", "Error Message is->"+e.getMessage());
+		}*/
+		try {	
+			int i=0;
+			String strPath = sikuliImagePath();
+			Screen s=new Screen();			
+			s.hover(strPath+"MainMenu.png");
+			while((!isImagePresent(strPath+"Settings.png"))){
+				if(i<4){
+					s.click(strPath+"MainMenu.png");
+					sleep(2000);
+				}else{
+					break;
+				}
+				i++;
+			}
+			//s.wait("Images/Settings.png");
+			s.click(strPath+"Settings.png");
+		} catch (FindFailed e) {
+			report.reportFailEvent("UnableToClickOnNewCliq", "Error Message is->"+e.getMessage());
+		}
+
+	}
+
+	public void selectNotForMeToAllEvents() {
+			waitForElement(btnsave);
+			sleep(2000);
+			List<WebElement> rbNotForMe = browser.findElements(By.xpath("//*[@class='modal-body']//tr/td[2]/div/input"));
+			
+			for(WebElement rb :rbNotForMe){
+				rb.click();
+				sleep(1000);
+			}
+			report.updateTestLog("selectNotForMe", "Selected NotForMe for all type of events", Status.SCREENSHOT);
+			clickManyTimes(btnsave);
+			report.reportDoneEvent("ClickOnSaveButton", "Clicked On Save Button Successfully");
+			browser.navigate().refresh();
+	}
+
+	public void selectWhyNotToAllEvents() {
+		waitForElement(By.xpath("//*[@class='modal-body']//tr/td[3]/div/input"));
+		sleep(2000);
+		List<WebElement> rbNotForMe = browser.findElements(By.xpath("//*[@class='modal-body']//tr/td[3]/div/input"));
+		
+		for(WebElement rb :rbNotForMe){
+			rb.click();
+			sleep(1000);
+		}
+		report.updateTestLog("selectWhyNot", "Selected 'WhyNot' for all type of events", Status.SCREENSHOT);
+		clickManyTimes(btnsave);
+		report.reportDoneEvent("ClickOnSaveButton", "Clicked On Save Button Successfully");
+		browser.navigate().refresh();
+		
+	}
+
+	public void selectWontMissToAllEvents() {
+		waitForElement(By.xpath("//*[@class='modal-body']//tr/td[4]/div/input"));
+		sleep(2000);
+		List<WebElement> rbNotForMe = browser.findElements(By.xpath("//*[@class='modal-body']//tr/td[4]/div/input"));
+		
+		for(WebElement rb :rbNotForMe){
+			rb.click();
+			sleep(1000);
+		}
+		report.updateTestLog("selectWhyNot", "Selected 'WhyNot' for all type of events", Status.SCREENSHOT);
+		clickManyTimes(btnsave);
+		report.reportDoneEvent("ClickOnSaveButton", "Clicked On Save Button Successfully");
+		browser.navigate().refresh();
+	}
+
+	public void popItAnyEvent() {
+		boolean blnFind = false;
+		selectFilterinAccountBanner("Sports","72","");
+		int count = verifyNumberOfImages("Sports");		
+		if(count>0){
+			String strPath = sikuliImagePath();
+			try {									
+				Screen s=new Screen();				
+				Iterator<Match> icons = s.findAll(strPath+"Sports.png");				
+				do{
+					s.click(icons.next());
+					System.out.println("Clicked Icon");
+					waitForElement(btnClose);
+					if(isElementPresent(btnClose)){
+						if(isElementPresent(btnPopIt)){
+							blnFind = true;
+							break;
+						}else{
+							btnClose.click();
+							sleep(2000);
+						}
+					}else{
+						sleep(3000);
+						browser.navigate().refresh();
+					}					
+				}while(icons.hasNext());				
+			} catch (FindFailed e) {
+				report.reportFailEvent("Exception Caught", "Unable to continue->"+e.getMessage());
+			}			
+		}else{
+			report.reportFailEvent("VerifySportsEvents", "Sports events are not displayed");
+		}
+		if(blnFind){
+			report.updateTestLog("Verifyeventdetails", "EventDetails is displayed", Status.SCREENSHOT);
+			btnPopIt.click();
+			report.reportPassEvent("ClickOnPopIt", "Clicked successfully on PopIt Button");
+
+		}else{
+			report.reportFailEvent("NoEventstoPop", "All the sports events are popped");
+		}
+
+	}
+
+	public void clickOnMyCliqs() {
+		try {	
+			String strPath = sikuliImagePath();
+			Screen s=new Screen();		
+			s.click(strPath+"MainMenu.png");
+			report.reportDoneEvent("ClickOnMainMenu", "Clicked On MainMenu");
+			sleep(2000);
+			s.click(strPath+"MyCliqs.png");
+			report.reportDoneEvent("ClickOnmyCliqs", "Clicked On MyCliqs");
+		} catch (FindFailed e) {
+			report.reportFailEvent("UnableToClickOnNewCliq", "Error Message is->"+e.getMessage());
+		}		
+	}
+
+	public int getNumOfEventsToAttend() {
+		waitForElement(By.xpath("//*[@id='interested-tab']/tr"));
+		List<WebElement> weInterested = browser.findElements(By.xpath("//*[@id='interested-tab']/tr"));
+		report.updateTestLog("VerifyTotalNumOfInterestedEvents", "Total Num Of Interested Events are-> "+weInterested.size(), Status.SCREENSHOT);
+		return weInterested.size();
+	}
+
+	public void compareInterestedEvents(int oldEventsToAttend, int newEventsToAttend) {
+		if(oldEventsToAttend<newEventsToAttend){
+			report.reportPassEvent("VerfiyPopedEventInToAttendTab", "Newly popped event displayed in To Attend tab");
+			report.updateTestLog("VerfiyInterestedTab", "New event is displayed", Status.SCREENSHOT);
+		}else{
+			report.reportPassEvent("VerfiyPopedEventInToAttendTab", "Newly popped event not displayed in To Attend tab");
+		}
+		
+	}
+
+	public void removeEventFromInterested() {
+		try{
+		waitForElement(btnRemove);
+		List<WebElement> weRemove = browser.findElements(By.xpath("//*[@id='interested-tab']/tr/td[4]/button"));
+		report.reportDoneEvent("ClickOnRemoveLink", "Clicked On remove Link of Interested event");
+		if(weRemove.size()>0){			
+			weRemove.get(0).click();
+			if(waitForAlert()){
+				String strAlert = closeAlertAndReturnText();
+				if(strAlert.contains("Are you sure you want to remove the event  from your list")){
+					report.reportPassEvent("VerifyAlertMessage", "Alert message is as expected->"+strAlert);
+				}else{
+					report.reportFailEvent("VerifyAlert", "Alert message is not as expected->"+strAlert);
+				}
+			}else{
+				report.reportFailEvent("verifyAlert", "Alert is not displayed");
+			}
+		}else{
+			report.reportPassEvent("VerifyInterestedEvents", "Interested events are not displayed");
+		}
+		}catch(Exception Ex){
+			report.reportPassEvent("VerifyInterestedEvents", "Interested events are not displayed");
+		}
+	}
+
+	public void closeMyCliqspopUp() {
+		waitForElement(btnCloseMyCliqs);
+		if(isElementPresent(btnCloseMyCliqs)){
+			btnCloseMyCliqs.click();
+			report.reportDoneEvent("ClickOnCloseButton", "Successfully Close the My Events Pop up");
+		}else{
+			report.reportFailEvent("closeMyEvents", "Unable to Close MyEvents pop up");
+		}
+	}
+
+	public void logoutApplication() {
+		waitForElement(btnLogOut);
+		if(isElementPresent(btnLogOut)){
+			btnLogOut.click();
+			report.reportDoneEvent("ClickOnLogoutLink", "Clicked on logout link successfully");
+			waitForElement(weUsername);
+			if(isElementPresent(weUsername)){
+				report.updateTestLog("LogoutAplication", "Logged out successfully", Status.SCREENSHOT);
+			}else{
+				report.reportFailEvent("LogOutApplication", "Unable to logout Application");
+			}
+		}else{
+			report.reportFailEvent("LogoutApplication", "Logout link is not displayed");
+		}
+		
+	}
+
+	public void validateAboutUsLink() {
+		waitForElement(lnkAbout);
+		lnkAbout.click();
+		report.reportDoneEvent("ClickOnAboutUsLink", "Clicked on Link Successfully");
+		waitForElement(weAboutUs);
+		if(isElementPresent(weAboutUs)){
+			report.updateTestLog("VerifyAboutUsLink", "About Us link is working fine", Status.SCREENSHOT);
+			btnCloseAbout.click();
+			sleep(1000);
+		}else{
+			report.reportFailEvent("verifyAboutUsLink", "About Us Link is not Working");
+		}
+	}
+
+	public void validateTermsLink() {
+		waitForElement(lnkTerms);
+		lnkTerms.click();
+		report.reportDoneEvent("ClickOnTermsLink", "Clicked on Terms and Conditions Link Successfully");
+		waitForElement(weTerms);
+		if(isElementPresent(weTerms)){
+			report.updateTestLog("VerifyTermsLink", "Terms And Conditions link is working fine", Status.SCREENSHOT);			
+			btnCloseterms.click();
+			sleep(2000);
+		}else{
+			report.reportFailEvent("verifyTermsLink", "Terms And Conditions Link is not Working");
+		}
+	}
+
+	public void validateHelpLink() {
+		waitForElement(lnkHelp);
+		lnkHelp.click();
+		report.reportDoneEvent("ClickOnHelpLink", "Clicked on Link Successfully");
+		waitForElement(weAboutUs);
+		if(isElementPresent(weAboutUs)){
+			report.updateTestLog("VerifyHelpLink", "Help link is working fine", Status.SCREENSHOT);			
+			btnCloseAbout.click();
+			sleep(1000);
+		}else{
+			report.reportFailEvent("verifyHelpLink", "Help Link is not Working");
+		}
+		
+	}
+
+}
+
+
+

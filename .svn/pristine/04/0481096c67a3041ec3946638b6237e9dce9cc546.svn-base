@@ -1,0 +1,116 @@
+package com.sun.regressiontestcases;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.sun.commons.Application;
+import com.sun.commons.PopCliqsAppication;
+import com.sun.data.PopCliqsDetails;
+import com.sun.pages.PopCliqsHomePage;
+import com.sun.pages.PopCliqsLogInPage;
+import com.sun.utils.SunAutoTest;
+
+public class PopCliqsRegressionTestCases extends SunAutoTest {
+
+	private PopCliqsAppication popCliqsAppication; 
+	private PopCliqsDetails popCliqDetails;
+	private PopCliqsHomePage popCliqsHomePage;
+	private PopCliqsLogInPage popCliqsLogInPage;
+	
+	@Before
+	public void openApplication(){
+		popCliqsAppication = new PopCliqsAppication(browser, report);		
+		popCliqsLogInPage = popCliqsAppication.openPopCliqsApplication();				
+	}
+	
+	@Test
+	public void signIntoPopCliqsApplication(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.verifyHomePage();
+	}
+	
+	@Test
+	public void validate_CreateNewCliqAndVerfiyIfThatIsDisplayedInHomePage(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.selectFilterinAccountBanner("Sports","72","");
+		int countBefore = popCliqsHomePage.verifyNumberOfImages("Sports");
+		popCliqsHomePage.clickOnNewCliq();
+		popCliqsHomePage.createNewCliq(popCliqDetails);
+		popCliqsHomePage.selectFilterinAccountBanner("Sports","72","");
+		int countAfter = popCliqsHomePage.verifyNumberOfImages("Sports");
+		popCliqsHomePage.verifyNewlyCreatedCliqInHomePage(countBefore,countAfter);	
+	}
+	
+	@Test
+	public void validate_Filters(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.selectFilterinAccountBanner("Sports","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Sports");
+		popCliqsHomePage.selectFilterinAccountBanner("Professional","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Professional");
+		popCliqsHomePage.selectFilterinAccountBanner("Arts","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Arts");
+		popCliqsHomePage.selectFilterinAccountBanner("Education","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Education");
+		popCliqsHomePage.selectFilterinAccountBanner("Outdoor","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Outdoor");
+		popCliqsHomePage.selectFilterinAccountBanner("Party","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Party");
+		popCliqsHomePage.selectFilterinAccountBanner("Social","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("Social");
+		popCliqsHomePage.selectFilterinAccountBanner("Support Group","72","");
+		popCliqsHomePage.verifyImagesAfterFiltering("SupportGroup");
+	}
+	
+	@Test
+	public void validate_SettingsFeature(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.clickOnSettings();
+		popCliqsHomePage.selectNotForMeToAllEvents();
+		popCliqsHomePage.verifyImagesAfterFiltering("None");
+		popCliqsHomePage.clickOnSettings();
+		popCliqsHomePage.selectWhyNotToAllEvents();
+		popCliqsHomePage.verifyImagesAfterFiltering("All");
+		popCliqsHomePage.clickOnSettings();
+		popCliqsHomePage.selectWontMissToAllEvents();
+		popCliqsHomePage.verifyImagesAfterFiltering("All");		
+	}
+	
+	@Test
+	public void validate_ToAttendSectionAfterPopIt(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.clickOnMyCliqs();		
+		int oldEventsToAttend = popCliqsHomePage.getNumOfEventsToAttend();
+		popCliqsHomePage.closeMyCliqspopUp();
+		popCliqsHomePage.popItAnyEvent();
+		popCliqsHomePage.clickOnMyCliqs();
+		int newEventsToAttend = popCliqsHomePage.getNumOfEventsToAttend(); 
+		popCliqsHomePage.compareInterestedEvents(oldEventsToAttend,newEventsToAttend);
+		popCliqsHomePage.removeEventFromInterested();
+		popCliqsHomePage.closeMyCliqspopUp();
+	}
+	
+	@Test
+	public void validate_LinksInbottomOfPage(){
+		popCliqDetails = PopCliqsDetails.loadFromDatatable(dataTable);
+		popCliqsHomePage = popCliqsLogInPage.loginToPopCliqs(popCliqDetails);
+		popCliqsHomePage.validateAboutUsLink();
+		popCliqsHomePage.validateTermsLink();
+		popCliqsHomePage.validateHelpLink();
+	}
+		
+	@After
+	public void closeAppication() throws Exception{
+		popCliqsHomePage.logoutApplication();
+		popCliqsAppication.close();
+	}
+	
+	
+	
+}
