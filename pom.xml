@@ -110,7 +110,7 @@
         <version>2.16</version>
         <configuration>
           <includes>
-            <include>**/*Test*.java</include>
+            <include>**/*Launch*.java</include>
            </includes>
         </configuration>
       </plugin>
